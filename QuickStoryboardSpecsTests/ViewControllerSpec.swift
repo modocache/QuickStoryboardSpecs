@@ -9,14 +9,17 @@
 import UIKit
 import Quick
 import Nimble
+import QuickStoryboardSpecs
 
 class ViewControllerSpec: QuickSpec {
   override func spec() {
-    var ctrl : ViewController!
+    var ctrl: ViewController!
 
     beforeEach {
-      ctrl = ViewController()
-      _ = ctrl.view
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      ctrl = storyboard.instantiateViewControllerWithIdentifier("ViewController") as ViewController
+      ctrl.beginAppearanceTransition(true, animated: false)
+      ctrl.endAppearanceTransition()
     }
 
     describe("storyboard UI elements") {

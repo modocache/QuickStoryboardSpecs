@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-  @IBOutlet weak var button: UIButton!
+public class ViewController: UIViewController {
+  @IBOutlet weak public var button: UIButton!
 
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
     button.setTitle("Hello", forState: .Normal)
   }
